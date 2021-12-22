@@ -1,17 +1,20 @@
 package infrastructure
 
 type System struct {
-	SystemId   int
-	SystemName string
-	Processor  []Cpu
-	Memory     []Ram
-	Storage    []Ssd
-	Power      Psu
+	SystemId    int
+	SystemName  string
+	Processor   []Cpu
+	Memory      []Ram
+	Storage     []Ssd
+	Power       Psu
+	ZoneAddress ZoneAddress
 }
 
-func NewSystem() *System {
+func NewSystem(systemId int, systemName string, zoneAddress ZoneAddress) *System {
 	sys := new(System)
-	sys.SystemId = 0
+	sys.SystemId = systemId
+	sys.SystemName = systemName
+	sys.ZoneAddress = zoneAddress
 
 	return sys
 }
