@@ -2,14 +2,9 @@ package infrastructure
 
 type Cpu struct {
 	CpuId    int
-	CpuType  CpuType
-	CpuSpeed float64
-}
-
-type CpuType struct {
-	CpuTypeId    int
-	CpuTypeName  string
-	CpuTypeSpeed float64
+	CpuModel CpuModel
+	Temp     float32
+	Age      float32
 }
 
 type Ssd struct {

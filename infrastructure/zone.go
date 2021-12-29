@@ -21,8 +21,18 @@ func (z *Zone) GetSystemsInfo() []string {
 
 	for _, sys := range z.Systems {
 		systemsInfo = append(systemsInfo,
-			fmt.Sprintf("%s : %v", sys.SystemName, sys.ZoneAddress.GetZoneAddress()))
+			fmt.Sprintf("%s - %v", sys.SystemName, sys.ZoneAddress.GetZoneAddress()))
 	}
 
 	return systemsInfo
+}
+
+func (z *Zone) GetSystemInfo(sysName string) string {
+	for _, sys := range z.Systems {
+		if sys.SystemName == sysName {
+			return fmt.Sprintf("%s - %v\n%s", sys.SystemName, sys.ZoneAddress.GetZoneAddress(), sys.GetSystemInfo())
+		}
+	}
+
+	return fmt.Sprint("System not found")
 }
