@@ -18,6 +18,13 @@ func init() {
 		CpuModelTdp:          125,
 		CpuModelManufacturer: intel,
 	}
+	CpuModels["5950X"] = CpuModel{
+		CpuModelId:           1,
+		CpuModelName:         "5950X",
+		CpuModelClock:        3.4,
+		CpuModelTdp:          105,
+		CpuModelManufacturer: amd,
+	}
 }
 
 type CpuManufacturer int
